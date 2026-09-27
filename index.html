@@ -1,43 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Appointment Scheduler</title>
+
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+    
     <header>
-        <main>
-            <h1>Appointment Scheduler</h1>
-            <form id="appointment-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date" required>
-
-                <label for="time">Time:</label>
-                <input type="time" id="time" name="time" required>
-
-                <label for="purpose">Purpose</label>
-                <select id="purpose" name="purpose" required>
-                    <option value="">Select Purpose</option>
-                    <option value="Consultation">Consultation</option>
-                    <option value="Follow-up">Follow-up</option>
-                    <option value="Routine Checkup">Routine Checkup</option>
-                    <option value ="meeting">Meeting</option>
-                    <option value="Interview">Interview</option>
-                    <option value="personal">Personal</option>
-                    <option value="other">Other</option>
-                </select>
-
-                <button type="submit">Schedule Appointment</button>
-            </form>
-
-            <h2>Scheduled Appointments</h2>
-            <ul id="appointments-list"></ul>
+        <h1>Appointment Scheduler</h1>
+        <p>Schedule and manage your appointments easily</p>
     </header>
+
+
+  
+
+    <main>
+
+        <div class="container">
+
+
+            <section class="appointment-form">
+
+                <h2>Add Appointment</h2>
+
+                <form id="appointmentForm">
+
+                    <div class="form-grid">
+
+                        
+                        <div class="form-group">
+
+                            <label for="name">Name</label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="date">Date</label>
+
+                            <input
+                                type="date"
+                                id="date"
+                            >
+
+                        </div>
+
+
+                        
+                        <div class="form-group">
+
+                            <label for="time">Time</label>
+
+                            <input
+                                type="time"
+                                id="time"
+                            >
+
+                        </div>
+
+
+                      
+                        <div class="form-group">
+
+                            <label for="purpose">Purpose</label>
+
+                            <select id="purpose">
+
+                                <option value="">Select purpose</option>
+
+                                <option value="Doctor">
+                                    Doctor
+                                </option>
+
+                                <option value="Meeting">
+                                    Meeting
+                                </option>
+
+                                <option value="Interview">
+                                    Interview
+                                </option>
+
+                                <option value="Personal">
+                                    Personal
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="add-btn"
+                        id="submitBtn"
+                    >
+                        Add Appointment
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            
+
+            <section class="appointments-section">
+
+                <h2>My Appointments</h2>
+
+
+             
+                <div class="search-controls">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search appointments..."
+                    >
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        id="upcomingBtn"
+                    >
+                        Upcoming Only
+                    </button>
+
+                </div>
+            
+                <div class="table-container">
+
+                    <table class="appointment-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Purpose</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="appointmentList">
+
+                            
+                            
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                
+                
+
+                <div
+                    class="empty-state"
+                    id="emptyState"
+                >
+                    No appointments found.
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+   
 </body>
+
 </html>
+```
+
